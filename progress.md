@@ -338,3 +338,20 @@
 
 - 校验文件存在，并包含必需的测试、安全、特殊来源和部署章节。
 - 已记录用户的长期约定：以后新建软件项目时自动在项目根目录创建 `AGENTS.md`。
+
+## 2026-09-07 - Task: 初始化 Git 并上传 GitHub
+
+### What was done
+
+- 初始化本地 `main` 分支并设置项目级 GitHub 提交身份。
+- 将远程 `origin` 指向 `helloworl9527/Telegram-channel-compact`。
+- 补充忽略规则，排除 `.env`、Telegram session、数据库、备份、构建产物和本地缓存。
+- 上传前发现 `.env.example` 含本机真实配置，已改为纯空白占位模板；对所有暂存文件执行本机凭据值匹配和私钥标记检查，均通过。
+- 修复随日期推进而失效的 Telegram 测试数据，使隐式当前时间测试使用动态近期时间、固定历史场景显式传入测试时间。
+- 首次提交并推送至公开 GitHub 仓库的 `main` 分支。
+
+### Verification
+
+- 全量 pytest、Ruff、Mypy、compileall 和构建均通过。
+- GitHub 远程 `main` 与本地提交一致，远程 `AGENTS.md` 可读取且包含部署门禁。
+- 仓库地址：`https://github.com/helloworl9527/Telegram-channel-compact`。
