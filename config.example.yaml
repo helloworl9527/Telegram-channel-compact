@@ -1,0 +1,30 @@
+timezone: Asia/Shanghai
+
+database_path: data/telegram.sqlite3
+summary_dir: data/summaries
+retention_days: 6
+summary_times:
+  - "08:00"
+  - "12:00"
+  - "22:00"
+
+cleanup:
+  # Monday=0, Sunday=6
+  weekday: 6
+  time: "03:00"
+
+telegram:
+  # Telethon 会自动在该路径后创建 .session 文件。
+  session_path: data/telegram
+  # 可使用 @username、公开 t.me 链接，或账号已访问过的稳定数字 chat_id。
+  allowlist:
+    - "@hezu1"
+  # 必须是 allowlist 中已列出的来源；仅这些特殊来源提取域名/URL和消息发送者简介。
+  shop_url_channels: []
+
+ai:
+  # base_url、API key 和 model 可由环境变量提供。
+  max_input_chars: 12000
+  timeout_seconds: 90
+  max_retries: 3
+  prompt_version: v1

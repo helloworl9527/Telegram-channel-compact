@@ -1,0 +1,30 @@
+[project]
+name = "tg-message-collector"
+version = "0.1.0"
+description = "Telegram allowlist message collector and per-source AI summarizer"
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+dependencies = [
+  "openai>=1.50,<3",
+  "PyYAML>=6.0,<7",
+  "telethon>=1.42,<2",
+]
+
+[project.scripts]
+tg-collector = "tg_collector.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tg_collector"]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3,<10",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

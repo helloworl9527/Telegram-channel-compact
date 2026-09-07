@@ -1,0 +1,26 @@
+timezone: Asia/Shanghai
+
+database_path: data/qiuqiuai1919-acceptance.sqlite3
+summary_dir: data/qiuqiuai1919-acceptance-summaries
+retention_days: 6
+summary_times:
+  - "08:00"
+  - "12:00"
+  - "22:00"
+
+cleanup:
+  weekday: 6
+  time: "03:00"
+
+telegram:
+  session_path: data/telegram
+  allowlist:
+    - "@qiuqiuai1919"
+  shop_url_channels:
+    - "@qiuqiuai1919"
+
+ai:
+  max_input_chars: 12000
+  timeout_seconds: 90
+  max_retries: 3
+  prompt_version: v1
